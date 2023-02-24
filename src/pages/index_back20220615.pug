@@ -1,0 +1,295 @@
+extends ../template/layout
+
+//-함수들
+mixin titleMainSub(titleMain, titleSub)
+  .title-area
+    p.title-main= titleMain
+    p.title-sub= titleSub
+
+mixin titleMainSubAndScrollID(titleMain, titleSub, scrollID)
+  .title-area(data-scroll-id=scrollID)
+    p.title-main= titleMain
+    p.title-sub= titleSub
+
+mixin inputText(plaName, className)
+  input(type="text" class=className autocomplete='off' placeholder=plaName)
+    
+
+mixin inputTel(plaName, className)
+  input(type="tel" class=className autocomplete='off' placeholder=plaName)
+
+
+mixin slideListRelese()
+  -for (let i= 0; i < 6; i++)
+    -let num= i+1;
+    if (num < 10)
+      -num= "0" + num
+    
+    a(class="swiper-slide info-box")
+      div.car-top
+        p.car-num #{num}
+        p.car-icon: img(src=`${imgPath}/main/icon_relese.png`, alt="아이콘")
+      div.img-area: img(src=`${imgPath}/car/car_relese01.png`, alt="자동차이미지")
+      div.car-info
+        p.car-name K5
+        p.car-deposit 보증금 30%
+          p.car-price 월42만원대
+        p.car-tip (세금/보험료 포함)
+        button(type="button" class="btn-quote") 견적신청하기
+
+mixin ReleseInfobox(num, carName, price01=0, price02=0)
+  if (num < 10)
+    -num= "0" + num
+  
+  a(class="swiper-slide info-box" href="#none")
+    div.car-top
+      p.car-num #{num}
+      p.car-icon: img(src=`${imgPath}/main/icon_special.png`, alt="아이콘")
+    div.img-area: img(src=`${imgPath}/car/car_relese${num}.png`, alt="자동차이미지")
+    div.car-info
+      p.car-name #{carName}
+      ul.car-price-ul
+        li.price-deposit
+          p.p-type 보증금 30%
+          p.p-price #{price01.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}원
+        li.price-normal
+          p.p-type 무보증
+          p.p-price #{price02.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}원
+      p.car-tip (세금/보험료 포함)
+      button(type="button" class="btn-quote") 견적신청하기
+
+
+mixin slideListRelese02()
+  +ReleseInfobox("1","스포티지","425370","458480")
+  +ReleseInfobox("2","K5","437800","465300")
+  +ReleseInfobox("3","G80","838310","774400")
+  +ReleseInfobox("4","캐스퍼","319110","338800")
+  +ReleseInfobox("5","아반떼","338800","316500")
+  +ReleseInfobox("6","투산","418900","449680")
+
+mixin SpecialInfobox(num)
+  a(class="swiper-slide info-box")
+    div.car-top
+      p.car-num #{num}
+      p.car-icon: img(src=`${imgPath}/main/icon_special.png`, alt="아이콘")
+    div.img-area: img(src=`${imgPath}/car/car_relese01.png`, alt="자동차이미지")
+    div.car-info
+      p.car-name K5
+      p.car-deposit 보증금 30%
+      p.car-price 월42만원대
+      p.car-tip (세금/보험료/방문정비 포함)
+      button(type="button" class="btn-quote") 견적신청하기
+
+mixin SpecialInfobox02(num, carName, price01=0, price02=0, price03=0)
+  if (num < 10)
+    -num= "0" + num
+  
+  a(class="swiper-slide info-box" href="#none")
+    div.car-top
+      p.car-num #{num}
+      p.car-icon: img(src=`${imgPath}/main/icon_special.png`, alt="아이콘")
+    div.img-area: img(src=`${imgPath}/car/car_special${num}.png`, alt="자동차이미지")
+    div.car-info
+      p.car-name #{carName}
+      ul.car-price-ul
+        li.price-advance
+          p.p-type 선수금 30%
+          p.p-price #{price01.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}원
+        li.price-deposit
+          p.p-type 보증금 30%
+          p.p-price #{price02.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}원
+        li.price-normal
+          p.p-type 무보증
+          p.p-price #{price03.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}원
+      p.car-tip (세금/보험료 포함)
+      button(type="button" class="btn-quote") 견적신청하기
+
+
+mixin slideListSpecial03()
+  +SpecialInfobox02("1","카니발9인승 디젤","276380","457490","495110")
+  +SpecialInfobox02("2","K8 2.5 가솔린","303250","482200","517800")
+  +SpecialInfobox02("3","쏘렌토 1.6 가솔린","281375","497000","544000")
+  +SpecialInfobox02("4","그랜저 2.5 가솔린","287560","481400","523500")
+  +SpecialInfobox02("5","GV80 2.5 터보","502440","853930","926970")
+  +SpecialInfobox02("6","아이오닉 전기차","302950","573650","663080")
+
+  +SpecialInfobox02("7","팰리세이드 2.2 디젤","329430","548570","594110")
+  +SpecialInfobox02("8","스타리아 2.2 11인승","340700","498410","518700")
+  +SpecialInfobox02("9","QM6 2.0 LPG","291200","452000","452000")
+  +SpecialInfobox02("10","트레일블레이저","261625","391000","419000")
+  +SpecialInfobox02("11","스파크","166800","233000","233000")
+  +SpecialInfobox02("12","모닝","207400","291830","292000")
+
+
+mixin slideListSpecial02()
+  -for (let i= 0; i < 12; i++)
+    -let num= i+1;
+    if (num < 10)
+      -num= "0" + num
+    +SpecialInfobox(num)  
+
+mixin slideListSpecial()
+  -let num= 0;
+  -for (let i= 0; i < 2; i++)
+    div(class="swiper-slide slide-part")
+      -for (let j= 0; j < 6; j++)
+        -num +=1;
+        -let numString;
+        if (num < 10)
+          -numString= "0" + num;
+        else
+          -numString= num;
+        
+        +SpecialInfobox(numString)
+      
+      
+    
+mixin slideArea(classMainName, classStyleName, slideListFomatFun)
+  div(class=`slide-cont ${classMainName} ${classStyleName}`)
+    div(class="slide-area")
+      div(class="swiper")
+        div(class="swiper-wrapper car-info-area")
+          +#{slideListFomatFun}
+
+      div(class="slide-btn slide-btn-prev")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 이전")
+      div(class="slide-btn slide-btn-next")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 다음")
+        
+    div(class="slide-pagination")
+
+mixin reivewArea(name, rankNum, reviewTitle, reviewText, reviewImgPath)
+  -let star="";
+  li.review-area
+    div.img-area: img(src=`${imgPath}${reviewImgPath}`, alt="이미지")
+    p.review-title #{reviewTitle}
+    p.review-text  #{reviewText}
+    div.rank-area
+      .icon-people: img(src=`${imgPath}/common/icon_people.png`, alt="이미지")
+      p.name #{name} 고객님
+      .rank
+        -for (let i=0; i < rankNum; i++)
+          //-star+="★"
+          img(src=`${imgPath}/common/icon_rank_star.png` class="img-rank-star")
+        
+
+mixin slideAreaIntro()
+  div(class="intro-main slide-intro")
+    div(class="swiper")
+      ul(class="swiper-wrapper intro-ul")
+        li(class="swiper-slide")
+          img(src=`${imgPath}/main/main_intro01.png`, alt="메인 이미지" class="mobile-hidden")
+          img(src=`${imgPath}/main/main_intro01_m.png`, alt="메인 이미지 모바일" class="pc-hidden")
+            
+        li(class="swiper-slide")
+          img(src=`${imgPath}/main/main_intro02.png`, alt="메인 이미지" class="mobile-hidden")
+          img(src=`${imgPath}/main/main_intro02_m.png`, alt="메인 이미지 모바일" class="pc-hidden")
+
+    div(class="slide-pagination intro-paging-area")
+
+
+//-==HTML==
+block content
+  main(class="wrap-container page-main")
+    section(class="sect sect-intro")
+      div(class="sect-container")
+        div(class="intro-content")        
+          +slideAreaIntro()            
+          form(class="in-info-content")
+            p(class="info-title") 부담없이 렌터카! 카이지에서!
+            div(class="in-info-area")
+              +inputText("이        름","in-name")
+              +inputTel("연  락  처","in-phone" )
+              +inputText("관심차종 1", "in-carype in-cartype01")
+              +inputText("관심차종 2", "in-cartype02")
+              +inputText("관심차종 3", "in-cartype03")
+            div(class="agree-area")
+              input(type="checkbox", id="check-agree" class="check-agree")
+              label(for="check-agree" class="check-agree-label") 개인정보수집동의
+              button(type="button" class="btn-show fn-open-modal-agree") 보기
+              
+            button(type="button" class="btn-car-quote fn-open-modal-complete") 간편견적신청
+      
+    section(class="sect sect-release" )
+      div(class="sect-container")
+        +titleMainSubAndScrollID("즉시출고차량","차량을 기다리지 않고 계약 즉시 받을 수 있는 차량!", "release")  
+
+        //- 슬라이드부분(상위 클래스이름, 클래스 스타일 이름, 슬라이드상자형식(함수이름))
+        +slideArea("slide-cont-release", "car-info-style-purple", "slideListRelese02")
+  
+        
+    section(class="sect sect-ad-middle")
+      div(class="sect-container")
+        div(class="ad-middle-area")
+          img(src=`${imgPath}/main/ad_middle.png`, alt="광고 이미지" class="mobile-hidden")
+          img(src=`${imgPath}/main/ad_middle_m.png`, alt="광고 이미지 모바일" class="pc-hidden")
+
+    section(class="sect sect-special")
+      div(class="sect-container")
+        +titleMainSubAndScrollID("이달의 특가차량","이달의 특가로 저렴하게 렌트할 수 있는 차량!","special")
+
+        //- 슬라이드부분(상위 클래스이름, 클래스 스타일 이름, 슬라이드상자형식(함수이름))
+        +slideArea("slide-cont-special", "car-info-style-blue", "slideListSpecial03")
+
+    section(class="sect sect-youtube")
+      div(class="sect-container")
+        div(class="title-area title-youtube")
+          p(class="title-main")
+            img(src=`${imgPath}/main/title_youtube.png`, alt="유튜브 제목")
+          p(class="title-sub") 유튜브 채널에서 영상을 통해 다양한 정보를 만나보세요.
+        div(class="youtube-contents")
+          div(class="youtube-area")
+            //img(src=`${imgPath}/main/youtube_img01.png`, alt="이미지")
+            div(class="youtube-box")
+              <iframe class="youtube-frame" src="https://www.youtube.com/embed/vVfwptqRp_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            p(class="youtube-text") 카니발 구매 영상
+            
+          div(class="youtube-area mobile-hidden")
+            //img(src=`${imgPath}/main/youtube_img02.png`, alt="이미지")
+            div(class="youtube-box")
+              <iframe class="youtube-frame" src="https://www.youtube.com/embed/bQ8M6TaL5oE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            p(class="youtube-text") 렌터카 차량 인수영상
+             
+      
+
+
+    section(class="sect sect-review")
+      div(class="sect-container")
+        +titleMainSub("고객후기","실제 구매하신 고객님들의 찐후기입니다")
+        div(class="go-area")
+          a(href="./review/review.html" class="go-page-review mobile-hidden") 더보기 ▶
+        ul(class="review-ul")
+          +reivewArea("김*진",5,"제네시스G80 출고후기","왠만하면 후기 잘 안남기는데 이사님이 너무 잘 해주셔서 남깁니다. 일이 늦게끝나 ",  "/review/review01.png")
+          +reivewArea("정*민",5,"테슬라 모델3 출고후기","신차를 할부로 하는것보다는 장기렌트로 하는편이 훨씬 나은거 같아서...",  "/review/review02.png")
+          +reivewArea("이*훈",5,"스타리아 출고후기","고민끝에 결정한 현대 스타리아. 다른 차와 무척 고민을 많이 하고 귀찮게 해드렸는데",  "/review/review03.png")
+          +reivewArea("강*석",5,"BMW X3 출고 후기","왠만하면 후기 잘 안남기는데 이사님이 너무 잘 해주셔서 남깁니다. 일이 늦게끝나  ",  "/review/review04.png")
+
+          
+
+    section(class="sect sect-partner")
+      div(class="sect-container")
+        div(class="title-area title-partner")
+          img(src=`${imgPath}/main/partner_title_logo.png`, alt="타이틀 로고" 
+          class="title-logo")
+          p(class="title-main") 공식파트너
+        div(class="partner-list-cont")
+          img(src=`${imgPath}/main/partner_list.png`, alt="파트너사" class="mobile-hidden")
+          img(src=`${imgPath}/main/partner_list_m.png`, alt="파트너사" class="pc-hidden")
+        
+
+    section(class="sect sect-ad-bottom")
+      div(class="sect-container")
+        div(class="ad-bottom-area fn-open-modal-quote")
+          img(src=`${imgPath}/main/ad_bottom_m.png`, alt="광고 이미지 모바일" class="pc-hidden")
+
+  
+
+  
+
+
+  //- script(src="static/js/main.js")
+  script(src="static/js/main.js")
+  
+    //-include ../assets/js/main.js

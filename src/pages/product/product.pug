@@ -1,0 +1,61 @@
+
+extends ../../template/layout_sub
+
+block content
+  main(class="wrap-container page-sub-product")
+    section(class="sect product-sect-cont")
+      div(class="sect-container")
+        div(class="product-area")
+          div(class="product-img-main")
+            div(class="img-box")
+              img(src=`${imgPath}/product/product_car01.png`, alt="이미지")
+          div(class="product-car-info-area") 
+            p(class="car-info-title") 신차장기렌트카 카니발
+            ul(class="car-info-ul")
+              li
+                p 제조사
+                p 기아자동차
+              li 
+                p 차종
+                p 카니발
+              li 
+                p 출시연도
+                p 2021
+
+            div(class="price-area")
+              div(class="price-box price-info")
+                p(class="p-title") 렌트
+                div(class="price-cont")
+                  p(class="p-price") 204,620<span class="won">원</span>
+                
+                //- div(class="price-cont")
+                //-   ul(class="price-info-ul")
+                //-     li
+                //-       p.name 선수금
+                //-       p.price 204,620<span class="won">원</span>
+                //-     li
+                //-       p.name 보조금
+                //-       p.price 400,520<span class="won">원</span>
+              
+              div(class="price-box price-lease btn-lease")
+                p(class="p-title") 리스
+                div(class="price-cont")
+                  p(class="p-price") 204,620<span class="won">원</span>
+
+            button(type="button" class="btn-car-quote fn-open-modal-quote") 빠른견적상담신청
+
+            div(class="tip-box")
+              p ※ 계약조건 48개월 / 연간 2만km / 선수금 30% / 만 26세 이상 보험
+              p ※ 포함항목 : 등록세, 취득세, 자동차세, 보험료 및 기타
+              p ※ 본 견적은 보증금 & 선수금이 적용된 월평균 납입 예상요금입니다.
+
+    section(class="sect shop-event-sect-cont01")
+      div(class="sect-container")
+        div(class="sect-content")
+          //- img(src=`${imgPath}/sub/shop/shop_event_porter_bongo.png`, alt="이미지" class="mobile-hidden")
+          img(src=`${imgPath}/sub/shop/shop_event_porter_bongo_m.png`, alt="이미지" class="pc-hidden")
+
+  main(class="wrap-container page-sub-event")  
+    
+        
+  include ../intro/_cont_intro

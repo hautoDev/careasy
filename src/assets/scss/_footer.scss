@@ -1,0 +1,134 @@
+.footer{
+  background-color: #e6e6e6;
+  padding-bottom: 30px;
+  width: 100%;
+  text-align: center;
+  img{
+    display: inline;
+  }
+  .footer-container{
+    text-align: center;
+  
+  }
+
+  .footer-menu{
+    padding-top: 26px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #c4c4c4;
+    .footer-menu-ul{
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      li{
+        padding: 0 40px;
+        &:not(:last-of-type){
+          border-right: 2px solid #696969;
+        }
+        *{
+          color: #696969;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+
+  .footer-logo{
+    padding-top: 26px;
+    // padding-bottom: 21px;
+    // border-bottom: solid 1px #333;
+  }
+}
+
+.footer-info{
+  margin-top:16px;
+}
+
+.copy-text-cont{
+  p{
+    color: #696969;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .copyright{
+    margin-top: 14px;
+  }
+}
+
+.footer-snsicon-cont{
+  margin-top: 43px;
+  
+  .snsicon-ul{
+    display: flex;
+    justify-content: center;
+    &>li{
+      margin-right: 14px;
+    }
+  }
+}
+
+
+@media (max-width:$mobileBaseMaxSize) {
+  .footer{
+    padding-bottom: toRem(180);
+    img{
+
+    }
+    .footer-container{
+    
+    }
+
+    .footer-menu{
+      padding-top: toRem(36);
+      padding-bottom: toRem(26);
+      .footer-menu-ul{
+        li{
+          padding: 0 toRem(50);
+          &:not(:last-of-type){
+          }
+          *{
+            color: #696969;
+            font-size: toRem(30);
+          }
+        }
+      }
+    }
+  
+  
+    .footer-logo{
+      padding-top: toRem(30);
+      padding-bottom: toRem(24);
+      img{
+        width: toRem(150);
+      }
+    }
+  }
+  
+  .footer-info{
+    margin-top: toRem(42);
+  }
+  
+  .copy-text-cont{
+    p{
+      font-size: toRem(22);
+    }
+    .copyright{
+      margin-top: toRem(14);
+    }
+  }
+  
+  .footer-snsicon-cont{
+    margin-top: toRem(50);
+    
+    .snsicon-ul{
+      display: flex;
+      justify-content: center;
+      &>li{
+        margin-right: toRem(16);
+        img{
+          width: toRem(70);
+        }
+      }
+    }
+  }
+}

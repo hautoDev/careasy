@@ -1,0 +1,85 @@
+extends ../../template/layout_sub
+
+mixin reviewArea(reviewImgPath, name, rankNum, reviewTitle,  ...reviewText)
+  -let star="";
+  li.review-area
+    div(class="img-area fn-open-modal-review"): img(src=`${imgPath}${reviewImgPath}`, alt="이미지")
+    p.review-title #{reviewTitle}
+    p.review-text
+      each item in reviewText
+        | #{item}
+        br
+    div.rank-area
+      .icon-people: img(src=`${imgPath}/common/icon_people.png`, alt="이미지")
+      p.name #{name} 고객님
+      .rank
+        -for (let i=0; i < rankNum; i++)
+          img(src=`${imgPath}/common/icon_rank_star.png` class="img-rank-star")
+
+
+
+block content
+  main(class="wrap-container page-sub-review")
+    div(class="page-top-title-area page-top-title-area-review")
+      div(class="page-sub-bg")
+      p(class="page-top-title") 고객 후기
+    section(class="sect sect-review review-sect-main")
+      div(class="sect-container")
+        ul(class="review-ul")
+          +reviewArea("/review/review01.png","김*진",5,"제네시스G80 출고후기!!",
+            "차량이 나와서 후기 남겨요. 가게 일하느라 연락주시면 잘 받지도 못했는데 늦은시간에 답장해도 매번 괜찮다고 해주셨어요.",
+            "친절하시고 상담내용부터 서비스까지 아주 아주 만족합니다. 최고!!")
+
+          +reviewArea("/review/review02.png","정*민",5,"스타리아 첫차 후기~",
+            "제 인생 첫차예요!!",
+            "첫차라 걱정도 많이했는데 상담하시는 분이 너무 친절하셔서 믿음이 갔어요~~",
+            "장기렌트라 제차는 아니지만 그래도 차 나온거보니까 진짜신나네요ㅎㅎ",
+            "얼른 타고 친구들만나서 자랑하고 싶습니다~~!",
+            "자동차는 잘 모르는데 상담때부터 너무 자세히 잘 알려주시고 담당자분 신속한 일처리도 마음에 들어요~",
+            "무엇보다 차량이 너무 이쁩니다~ㅎㅎ")
+
+          +reviewArea("/review/review04.png", "이*훈",5,"스타리아 후기!",
+            "고민끝에 결정한 현대 스타리아!! 다른 차랑도 좋아보여서 고민 무지하게 했어요!",
+            "새삥처럼 차량도 좋고 서비스도 잘 받아서 기분좋네요.",
+            "그리고 상담사님 멋진 차량 감사드려요. 잘 타겠습니다~!!")
+
+
+          +reviewArea("/review/review03.png", "이*주",5," 스포티지 리스후기",
+            "리스로 계약해서 차량 받았습니다.",
+            "제 차라고 생각해서 그런지 몰라도 너무 기분이 좋네요.ㅎㅎ",
+            "차량 관련해서 이것저것 잘 챙겨주셔서 너무 고마워서 후기 남겨요~",)
+
+          +reviewArea("/review/review03.png", "신*국",5,"스파크 렌트 후기",
+            "신차를 할부로 하는것보다는 장기렌트로 하는편이 훨씬 나은거 같아서 이쪽에 연락했어요.",
+            "처음부터 끝까지 상담 하시는 분을 엄청 귀찮게 해드렸는데 끝까지 웃으시면서 상대해주는 모습이 너무 마음에 남아서 후기 남기게 되네요. ㅎㅎ",
+            "차량 받았을 때 서비스도 괜찮고 무엇보다 상담하시는 분이 끝까지 서비스정신을 놓지 않으신 분이라 좋았습니다.",
+            "다음에도 렌트할 일이 있다면 이 분에게 하고 싶네요.~")
+
+          +reviewArea("/review/review03.png", "박*준",5," 쏘렌토 받은 후기^^",
+          "차량 잘 받고 잘 타고 있어요~~!",
+          "제가 원하는 옵션 맞추기 힘들었을텐데... 다 맞춰주시더라구요.~",
+          "정말 대단한거 같아요~^^ 정말 상담사님 존경~ 존경!!!",
+          "상담사님. 차량 잘 타고 있고요. 차량 옵션 맞춰주셔서 감사해요~~!!^^",)
+
+          
+          //- +reviewArea("/review/review04.png", "최*식",5,"스타리아 출고후기","고민끝에 결정한 현대 스타리아. 다른 차와 무척 고민을 많이 하고 귀찮게 해드렸는데",  "/review/review03.png")
+          //+reviewArea("강*석",5,"BMW X3 출고 후기","왠만하면 후기 잘 안남기는데 이사님이 너무 잘 해주셔서 남깁니다. 일이 늦게끝나  ",  "/review/review04.png")
+
+
+        //페이징
+        div(class="paging-btn-area")
+          button(type="button" class="paging-btn paging-btn-first") 
+            img(src=`${imgPath}/common/paging_arrow_left_duble.png`, alt="처음 페이지")
+          button(type="button" class="paging-btn paging-btn-prev")
+            img(src=`${imgPath}/common/paging_arrow_left.png`, alt="이전 페이지")
+          
+          div(type="button" class="paging-btn-num-box")
+            -for(let i=0;i<5;i++)
+              button(type="button" class="paging-btn") #{i+1}
+          
+          button(type="button" class="paging-btn paging-btn-next")
+            img(src=`${imgPath}/common/paging_arrow_left.png`, alt="다음 페이지")
+          button(type="button" class="paging-btn paging-btn-last")
+            img(src=`${imgPath}/common/paging_arrow_left_duble.png`, alt="끝 페이지")
+
+

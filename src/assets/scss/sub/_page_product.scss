@@ -1,0 +1,377 @@
+.page-sub-product{
+  //background-color: #323232; 
+  .product-sect-cont{
+    padding-top: 80px;
+    padding-bottom: 72px;
+  }
+  .sect-container{
+    width: 1140px;
+  }
+}
+
+
+.product-area{
+  background-color: #f6f6f6;
+  border: 5px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  //align-items: stretch;
+  padding: 0 46px;
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.product-img-main{
+  width: 490px;
+  background-color: #23262a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .img-box{
+    width: 100%;
+    img{
+      width: 100%; 
+    }
+  }
+}
+
+
+.product-car-info-area{
+  width: 512px;
+  padding-top: 8px;
+  *{
+    font-family: 'GmarketSans', sans-serif;//기본굵기 400 
+    line-height: 1;
+  }
+  .car-info-title{
+    color: #464646;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .car-info-ul{
+    margin-top: 24px;
+    border: 2px solid #c4c4c4;
+    border-left: none;
+    border-right: none;
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 42px;
+      &:not(:last-of-type){
+        border-bottom: 1px solid #c4c4c4;
+      }
+      p{
+        color: #464646;
+        font-size: 17px;
+        &:last-of-type{
+          font-size: 20px;
+        }
+      }
+      
+    }
+  }
+  
+  .price-area{
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    // height: 150px;
+    // min-height: 150px;
+
+
+    .price-box{
+      width: 49%;
+      border-radius: 22px;
+      padding: 0 20px;
+      padding-top: 10px;
+      padding-bottom: 14px;
+      //height: 5;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 3px 0 4px rgba($color: #000, $alpha: 0.3);
+      
+      .p-title{
+        width: 100%;
+        font-size: 30px;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 4px;
+      }
+      .price-cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        width: 100%;
+        padding-top: 14px;
+      }
+      .p-text{
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        font-size: 28px;
+        padding-top: 8px;
+      }
+      .p-price{
+        font-size: 32px;
+          font-weight: 500;
+          .won{
+            font-size: 21px;
+            font-weight: 400;
+            margin-left: 3px;
+          }
+      }
+      
+      // .price-info-ul{
+      //   width: 100%;
+      //   padding: 0 12px;
+      //   li{
+      //     width: 100%;
+      //     display: flex;
+      //     justify-content: space-between;
+      //     align-items: center;
+      //     padding-top: 5px;
+      //     &:first-of-type{
+      //       border-bottom: 1px solid #949494;
+      //     }
+
+      //     p{
+      //       line-height: 1.2; 
+      //     }
+
+      //     .name{
+      //       font-size: 25px;
+      //     }
+      //     .price{
+      //       font-size: 32px;
+      //       font-weight: 500;
+      //       .won{
+      //         font-size: 21px;
+      //         font-weight: 400;
+      //         margin-left: 3px;
+      //       }
+      //     }
+
+      //   }
+      // }
+    }
+  }
+
+  .price-info{
+    //width: 308px;
+    background-color: #ffe866;
+  }
+  .price-lease{
+    //width: 182px;
+    background-color: #ffc775;
+  }
+
+
+  .btn-car-quote{
+    margin-top: 28px;
+    width: 100%;
+    height: 72px;
+    border-radius: 36px;
+    background: linear-gradient(125deg,#a74cb8 40%,#7a3dc8 52%);
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+    box-shadow: 2px 0 5px rgba($color: #000, $alpha: 0.4);
+  }
+
+  .tip-box{
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+    p{
+      line-height: 1.4;
+    }
+  }
+}
+
+
+
+@media (max-width:$mobileBaseMaxSize){
+  .page-sub-product{
+    //background-color: #323232; 
+    .product-sect-cont{
+      padding-top: toRem(50);
+      padding-bottom: toRem(30);
+    }
+    .sect-container{
+      width: auto;
+    }
+  }
+  .product-area{
+    flex-direction: column;
+    background: none;
+    border: none;
+    padding: 0;
+    padding-top: toRem(32);
+    padding-bottom: toRem(34);
+  }
+  
+  .product-img-main{
+    width: 100%;
+    background: none;
+    .img-box{
+      
+      img{
+        
+      }
+    }
+  }
+
+
+
+  .product-car-info-area{
+    width: 100%;
+    padding-top: toRem(70);
+
+    .car-info-title{
+      font-weight: 400;
+      font-size: toRem(40);
+    }
+
+    // .car-info-ul{
+    //   margin-top: toRem(20);
+    //   li{
+    //     height: toRem(66);
+    //     padding: 0 toRem(20);
+    //     &:not(:last-of-type){
+          
+    //     }
+    //     p{
+          
+    //       font-size: toRem(25);
+    //       &:last-of-type{
+    //         font-size: toRem(27);
+    //       }
+    //     }
+        
+    //   }
+    // }
+
+    .price-area{
+      margin-top: toRem(24);
+      
+      min-height: toRem(100);
+  
+  
+      .price-box{
+        border-radius: toRem(24);
+        padding: 0 toRem(20);
+        padding-top: toRem(18);
+        padding-bottom: toRem(16);
+        
+        
+        .p-title{
+          font-size: toRem(38);
+          padding-bottom: toRem(6);
+        }
+        .price-cont{
+          padding-top: toRem(22);
+        }
+        .p-text{
+          font-size: toRem(36);
+          padding-top: toRem(8);
+        }
+
+        .p-price{
+          font-size: toRem(38);
+            font-weight: 500;
+            .won{
+              font-size: toRem(24);
+              margin-left: toRem(3);
+            }
+        }
+        
+        .price-info-ul{
+          padding: 0 toRem(12);
+          li{
+            padding-top: toRem(8);
+            &:first-of-type{
+              
+            }
+  
+            p{
+              
+            }
+  
+            .name{
+              font-size: toRem(32);
+            }
+            .price{
+              font-size: toRem(40);
+              .won{
+                font-size: toRem(26);
+                margin-left: toRem(3);
+              }
+            }
+  
+          }
+        }
+      }
+    }
+    
+
+    .price-info{
+      width: 60%;
+    }
+    .price-lease{
+      width: 37%;
+    }
+
+
+    .btn-car-quote{
+      margin-top: toRem(24);
+      height: toRem(104);
+      border-radius: toRem(50);
+      font-size: toRem(48);
+      padding-top: toRem(32);
+    }
+
+
+    .tip-box{
+      margin-top: toRem(22);
+      font-size: toRem(22);
+      p{
+        
+      }
+    }
+  }
+
+
+
+}
+
+
+.shop-event-sect-cont01{
+  background-image: url(../../img/sub/shop/shop_event_porter_bongo.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 0;
+  // width: 100%;
+  height: 585px;
+  .sect-container{
+    // width: 1920px;
+  }
+}
+
+@media (max-width:$mobileBaseMaxSize){
+  .shop-event-sect-cont01{
+    background: none;
+    height: auto;
+    .sect-container{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

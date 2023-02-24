@@ -1,0 +1,18 @@
+header.header 
+  div.header-bg
+  div.header-container
+    div.header-logo
+      a(href=`${basePath}index.html`)
+       img(src=`${imgPath}/common/logo_top.png`, alt="탑로고" class="mobile-hidden")
+       img(src=`${imgPath}/common/logo_top_color.png`, alt="탑로고 모바일" class="pc-hidden")
+
+    nav.top-menu-content
+      ul.top-menu-ul
+        li: a(href=`${basePath}intro/intro.html`) 카이지렌터카!
+        li: a(href=`${basePath}index.html` data-scroll-target="release") 즉시출고차량
+        li: a(href=`${basePath}index.html` data-scroll-target="special") 이달의 특가차량
+        li: a(href=`${basePath}review/review.html`) 고객후기
+
+    div.btn-box-branch
+      button(type="button" class="btn-branch fn-open-modal-branch") 
+        img(src=`${imgPath}/common/btn_branch.png`, alt="지사모집")
