@@ -3,8 +3,8 @@
 @import "base/_common";
 
 //
-*{
-  font-family: 'Noto Sans KR', sans-serif;//기본굵기 400
+* {
+  font-family: "Noto Sans KR", sans-serif; //기본굵기 400
   //일반공식(pohto_va*base_font_size/1000)
   letter-spacing: -0.075em;
   line-height: 1;
@@ -13,20 +13,22 @@
 //   font-family: 'Noto Sans KR', sans-serif;
 // }
 
-body{
+body {
   background-color: #ffffff;
 }
 
-@media (max-width:$mobileBaseMaxSize) {
+@media (max-width: $mobileBaseMaxSize) {
   //html{font-size: 62.5%;} //반응형 기준폰트
   //body{font-size: calc(100vw/750);}
-  html{font-size: calc((100vw/750)*10);}
+  html {
+    font-size: calc((100vw / 750) * 10);
+  }
   //body{font-size: 62.5%}
-  
 
-  img{image-rendering: -webkit-optimize-contrast;} //이미지 퀄리티업
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  } //이미지 퀄리티업
 }
-
 
 @import "_footer";
 @import "_header";
@@ -46,3 +48,4 @@ body{
 
 @import "sub/_page_member";
 @import "sub/_page_order";
+@import "sub/_page_promotion";

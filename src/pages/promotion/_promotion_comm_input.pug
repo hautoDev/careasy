@@ -1,0 +1,28 @@
+mixin inputText(plaName, className)
+  input(type="text" class=className autocomplete='off' placeholder=plaName)
+    
+
+mixin inputTel(plaName, className)
+  input(type="tel" class=className autocomplete='off' placeholder=plaName)
+
+
+form(class="promotion-in-info-content")
+  div(class="info-title") 
+    p.main 문의하실 차종 남겨주세요!
+    p.sub 전문상담원이 연락드리겠습니다.
+  div(class="in-info-area")
+    +inputText("이   름","in-name")
+    +inputTel("연락처","in-phone" )
+    +inputText("문의차종", "in-carype in-cartype01")
+  div(class="agree-area")
+    input(type="checkbox", id=`${agreeId}` class="check-agree")
+    label(for=`${agreeId}` class="check-agree-label") 개인정보수집동의
+    button(type="button" class="btn-show fn-open-modal-agree") 보기
+    
+  button(type="button" class="btn-car-quote fn-open-modal-complete") 간편 견적신청
+
+
+
+
+
+

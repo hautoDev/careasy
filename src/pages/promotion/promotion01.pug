@@ -1,0 +1,18 @@
+extends ../../template/layout_sub
+
+block content
+  main(class="wrap-container page-sub-promotion")
+    section(class="sect promotion-sect-cont")
+      div(class="sect-container")
+        div(class="sect-content")
+          .promotion-area.promotion-top
+            img(src=`${imgPath}/promotion/promotion01_top.jpg`, alt="탑 이미지")
+          -agreeId="check-agree01";
+          include ./_promotion_comm_input
+
+          .promotion-area.promotion-cont
+            img(src=`${imgPath}/promotion/promotion_cont.jpg`, alt="콘텐츠 이미지")
+          
+          -agreeId="check-agree02";
+          include ./_promotion_comm_input
+
